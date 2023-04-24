@@ -96,6 +96,11 @@ result = 0
 print(f'The result is {"True" if result else "False"}')
 # The result is False
 
+name = 'John'
+job = 'Developer'
+
+print("{} is a {}".format(name, job)) # John is a Developer. Takes name in the first {} then job all inside the print
+
 # Time formatting 
 
 import datetime
