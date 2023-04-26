@@ -142,3 +142,82 @@ print(sdfsdf) # Is equal to index 1 of the tup ---> 28
 # Tuples can be used as keys in dictionaries, while lists cannot. Tuples are immutable (more security).
 
 # In conclusion, tuples are more powerful than lists.
+
+dict1 = dict(name='max', age=28, city='Boston') # We can create a dictionary using the dict function() to avoid putting ' ' for each key and : . We just put key=value, ...
+print(dict1) # {'name': 'max', 'age': 28, 'city': 'Boston'}
+
+dict1['email'] = 'abcde@gmail.com' # Appending a key and an arg at the end of the dictionary
+print(dict1) # {'name': 'max', 'age': 28, 'city': 'Boston', 'email': 'abcde@gmail.com'}
+
+dict1['email'] = 'a@gmail.com' # Replacing/updating the value referring to the key 'email'
+print(dict1) # {'name': 'max', 'age': 28, 'city': 'Boston', 'email': 'a@gmail.com'}
+
+del dict1['name'] # deleting key 'name' and it corresponding value
+dict1.pop('age') # Same as delete. We pop the key, and the value referred to it. NEEDS A VALUE BETWEEN ()
+dict1.popitem() # Deletes the last key and value from the dictionary. Receives no arguments between () (email deleted)
+
+print(dict1) # {'city': 'Boston'} (name, age and email were deleted using methods del, pop and popitem in order)
+
+print(dict1['city']) # Boston. Accessing dict by indexing the name of the keys
+# print(dict['Boston']) Error. Only keys can be obtained and referenced by this method, no values. 
+
+for vals in dict1.values(): # Gets the values of the dictionary using this method
+  print(vals) # Boston
+
+for keys in dict1.keys(): # Gets the values of the dictionary using this method
+  print(keys) # city
+
+for key, value in dict1.items(): # Gets keys and values but without ':: ' '' ' or {}
+  print(f'The key "{key}" corresponds to the value: "{value}"') # The key "city" corresponds to the value: "Boston". No matter if we put value before or after either way, it will always print the key and then the value
+
+dictcopy = dict1.copy() # Independent copy using .copy
+      #  = dict(dict) works the same way
+
+dictcopy['email'] = 'emailcopy@gmail.com'
+dictcopy['city'] = 'New York Copy'
+dictcopy['name'] = 'Copy'
+
+print(dict) # {'city': 'Boston'}
+print(dictcopy) # {'city': 'New York Copy', 'email': 'emailcopy@gmail.com', 'name': 'Copy'}
+
+dictionary = {'a' : 1, 'b' : 2, 'c':3, 'd':4}
+dictionary2 = dict(a=121212, b=32323, c='This is an extra text from second dict', name='Max')
+
+dictionary.update(dictionary2) # Dictionary got updated taking reference of dictionary2 (only 1 argument accepted)
+print(dictionary) # {'a': 121212, 'b': 32323, 'c': 'This is an extra text from second dict', 'd': 4, 'name': 'Max'} merged two dictionaries, but giving priority to the 2nd one to overwrite things! Keys that aren't present in the two dictionaries at the same time conserve their state.
+
+my_dict = {4: 'apple', 5: 'banana', 6: 'orange'}
+print(my_dict[4]) # 'apple'
+print(my_dict[5]) # 'banana'
+print(my_dict[6]) # 'orange'
+
+# We are accessing the dictionary values by using their corresponding keys (4, 5, 6). We cannot access the dictionary values using an index like my_dict[0] in this case where keys are ints.
+
+my_dict = {}
+my_dict[(1, 2)] = 'value1'
+my_dict[(3, 4)] = 'value2'
+
+print(my_dict[(1,2)])  # Output: 'value1'
+print(my_dict[(3, 4)])  # Output: 'value2'
+
+# Assigning two keys to a value using tuples(non-mutables as keys in a dictionary) (no lists because these are mutables). Note that we need these two keys for accessing the value, and therefore using 'my_dict[(1)] and not 1,2 will gib¿ve us an error.
+
+
+# 'IS' keyword
+
+a = [1, 2, 3]
+b = [1, 2, 3]
+c = a
+
+print(a is b)  # False, a and b reference different objects in memory
+print(a is c)  # True, a and c reference the same object in memory
+
+a = 5
+b = 5.0
+
+print(f'{a == b = }')  # True - value comparison (checks if the objects have the same value). 'a == b = True'
+print(f'{a is b = }')  # False - strict comparison (a IS int, b IS float). 'a is b = False'
+
+# This way of formatting string allow us to enter certain words between {} and then showing up the bool value.
+
+# The 'is' keyword in Python is used for object identity STRICT comparison. Checks if two objects are the same object in memory
