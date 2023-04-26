@@ -90,3 +90,55 @@ print(result)
 
 result = add_numbers(10, "20") # Output: None
 print(result)
+
+lista = [0] * 5
+print(list) # [0, 0, 0, 0, 0]
+list1 = [0,1] * 5 # 5 times [0,1]
+print(list) # [0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+text = '123' * 5
+print(text) # 123123123123123
+
+# Only '*' supported in this kind of operations (operations with str's and int's)
+
+biglist = lista + list1 # joins lists for order specified (first list then list1)
+print(biglist) # [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+
+# # Only '+' supported in this kind of operations (operations with str's and int's)
+
+# Tuples ( () are optional)
+
+tup = 'Max', 28, 'New York' # () are optional
+print(tup) # ('Max', 28, 'New York') ---> A tuple!
+
+tuple1 = ('Max') 
+print(tuple1) # Max ---> Not recognized as a tuple! (is a string)
+
+mytuple = ('Max', ) # Type: String ---> ('Max',) is considered tuple. When defining a tuple with only one element, you need to add a comma after the element to indicate that it is a tuple, otherwise it will be considered a string.
+# print(type(mytuple)) ---> class tuple, if no ', ' and only a str inside the tuple ---> class string
+
+# if (x := 'Max' in tup):
+#   print(x)
+
+print(tup.count('a')) # 0 as it won't track individual characters like from 'Max', so it will never say 1 unless an item 'a' is in the tuple
+print(tup.index(28)) # Index 1 as 28 is in index 1 in tup. If value not in tup, like str '28' or 'sxbd', we will get a valueError.
+
+r = list(tup) # Converter: tup (tuple) into list
+print(r) # ['Max', 28, 'New York']
+
+o = tuple(r) # Converter: r (list) into tuple
+print(o) # ('Max', 28, 'New York')
+
+name, sdfsdf, city = tup # We assign as much variables as elements the tuple has for getting each item (unpack)
+
+print(name) # Is equal to index 0 ---> 'Max9
+print(sdfsdf) # Is equal to index 1 of the tup ---> 28
+# print(city) # Is equal to index 2 (-1) of tup ---> 'New York'
+
+# We can also unpack 3 but print whatever we want.
+
+# Lists are larger in size (bytes) compared to a tuple with the exact same elements and composition.
+# List take longer to make with the 'timeit' module compared with the same tuple, the same amount of repetitions.
+# Tuples can be used as keys in dictionaries, while lists cannot. Tuples are immutable (more security).
+
+# In conclusion, tuples are more powerful than lists.
