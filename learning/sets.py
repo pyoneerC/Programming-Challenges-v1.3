@@ -166,3 +166,70 @@ print(set(reversed('hello'))) # It's not reversed (it's mixed) but rather CHANGE
 
 # print(set('hello')) ---> {'o', 'l', 'e', 'h'}
 # print(set(reversed('hello'))) ---> {'h', 'o', 'e', 'l'} (not reversed but instead, changed, and changes every time we run the file.)
+
+setA = {1,2,3,4,5,6,7,8,9}
+setB = {1,2,3,10,11,12}
+
+symdiff = setB.symmetric_difference(setA) # 1 argument. Unique elements that are only in one set or another, not in both sets. {4,5,6,10,11, etc.}
+print(symdiff) # {4, 5, 6, 10, 11, 12}
+
+setA.update(setB) # Updates setA  (doesn't create a new set) taking account setB. Accepts multiple arguments. The elements in setB are added to setA using this method. No problem if repeated elements, it'll skip over them.
+print(setA) # {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+setA = {1,1,1,1,2,3,4,4,4,4,5,6,7,8,9} # Restoring to the original value. Skips all repeated values in the set and repeated in the comparison
+# If there are repeated elements in setA, they will be ignored in the computation.
+
+# print(setA.difference_update(setB)) The difference_update method returns None because it updates the set in-place and does not return a new set. So when you call print(setA.difference_update(setB)), it will print None. Can't print directly.add()
+
+setA.difference_update(setB)
+print(setA)  # Output: {4, 5, 6, 7, 8, 9}
+
+setA = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+setA.symmetric_difference_update(setB) #Grabs the unique numbers of setA and append the unique numbers of setB at the end
+
+print(setA)  # Output: {4, 5, 6, 7, 8, 9, 10, 11, 12}
+
+# UPDATE: MODIFIES METHOD X (setA) x.update(y) 
+# The symmetric_difference_update() method modifies the set setA by keeping only the elements that are unique to either setA or setB, effectively creating a new set with those elements
+
+# The `difference()` method returns the set of elements that are present in one set but not in the other. The syntax is `set1.difference(set2)`. For example:
+
+# repr
+# set1 = {1, 2, 3, 4}
+# set2 = {2, 3, 5}
+
+# diff = set1.difference(set2)
+
+# print(diff) # {1, 4}
+# repr
+
+# Here, `diff` contains the elements that are present in `set1` but not in `set2`.
+
+# On the other hand, the `symmetric_difference()` method returns the set of elements that are present in either of the two sets but not in both. The syntax is `set1.symmetric_difference(set2)`. For example:
+
+# repr
+# set1 = {1, 2, 3, 4}
+# set2 = {2, 3, 5}
+
+# sym_diff = set1.symmetric_difference(set2)
+
+# print(sym_diff) # {1, 4, 5}
+# repr
+
+# Here, `sym_diff` contains the elements that are present in either `set1` or `set2` but not in both.
+
+o = frozenset([1,2,3]) # Unmodifiable set (frozen)
+
+# o.add(4) DON'T WORK IN frozenset
+
+# Here are some commonly used methods for frozenset:
+
+# frozenset.copy() - returns a shallow copy of the frozenset.
+# frozenset.union(other) - returns a new frozenset that is the union of the current frozenset with other.
+# frozenset.intersection(other) - returns a new frozenset that is the intersection of the current frozenset with other.
+# frozenset.difference(other) - returns a new frozenset that contains the elements in the current frozenset that are not in other.
+# frozenset.symmetric_difference(other) - returns a new frozenset that contains the elements that are in either the current frozenset or other, but not in both.
+# frozenset.issubset(other) - returns True if the current frozenset is a subset of other, False otherwise.
+# frozenset.issuperset(other) - returns True if the current frozenset is a superset of other, False otherwise.
+# frozenset.isdisjoint(other) - returns True if the current frozenset and other have no common elements, False otherwise.

@@ -200,7 +200,7 @@ my_dict[(3, 4)] = 'value2'
 print(my_dict[(1,2)])  # Output: 'value1'
 print(my_dict[(3, 4)])  # Output: 'value2'
 
-# Assigning two keys to a value using tuples(non-mutables as keys in a dictionary) (no lists because these are mutables). Note that we need these two keys for accessing the value, and therefore using 'my_dict[(1)] and not 1,2 will gib¿ve us an error.
+# Assigning two keys to a value using tuples(non-mutable as keys in a dictionary) (no lists because these are mutable). Note that we need these two keys for accessing the value, and therefore using 'my_dict[(1)] and not 1,2 will gib¿ve us an error.
 
 
 # 'IS' keyword
@@ -221,3 +221,71 @@ print(f'{a is b = }')  # False - strict comparison (a IS int, b IS float). 'a is
 # This way of formatting string allow us to enter certain words between {} and then showing up the bool value.
 
 # The 'is' keyword in Python is used for object identity STRICT comparison. Checks if two objects are the same object in memory
+
+
+# Sets: unordered, mutable, non duplicates. ---> {1,2,3,4,5,5,5,5,6} ---> print() ---> {1,2,3,4,5,6}
+
+myset = set([1,2,3]) # We can do sets by using 'set' built-in keyword, but we'll need an iterable [] inside of the () for actually making the set, so it shows with {} in the console (like in this case). pop() will always remove and return same value if using this way.
+print(myset) # {1, 2, 3}
+
+myset1 = set('Hello') # We define a set using set and a string, te result will be the string sliced, non organized, non repeated chars inside {}
+print(myset1) # {'o', 'e', 'l', 'H'}. order is arbitrary.
+
+# Empty {} is recognized (using type) as a dict in first instance, not as a set. If you want {} and type: set you got to do it using set() method.
+
+myset.add(1) # 1 already in, won't add anything. We can only add 1 argument.
+myset.remove(1) # Remove '1' from the set. Only 1 argument allowed. .discard() does the same
+myset.clear() # Clear set
+print(myset) # set() ---> Empty
+
+myset.add(1)
+myset.add(2)
+myset.add(3)
+
+print(myset.pop()) # 1. # Takes no arguments. Removed the 1 and returned it, by printing it. Removes and return the same, but it's random
+
+print(myset) # {2,3}
+
+if 2 in myset: # We can identify int values by putting the int in here, no need to put '2' because it'll look for '2' string and will not find it.
+  print('1') # 1 
+
+  a = 'hello there'
+
+print(a) # hello there
+print(str(a)) # hello there
+print(repr(a)) # 'hello there'
+
+s = "Abc\nXyz"
+
+print(s) # Abc
+         # Xyz
+print(str(s)) # Abc
+              # Xyz
+print(repr(s)) # invisible characters now visible (\n) # 'Abc\nXyz'
+
+# repr ---> representation '' (returns a string representation of the thing [printing])
+
+import datetime
+now = datetime.datetime.now()
+print( now )
+print( repr(now) )
+
+# 001 | 2023-04-26 19:03:12.298261
+# 002 | datetime.datetime(2023, 4, 26, 19, 3, 12, 298261) (shows invisible chars and additional info, good for debugging also)
+
+# for some objects, like bytes objects, str and repr are identical, also dicts, lists, sets
+
+# Return a string containing a printable representation of an object. For many types, this function makes an attempt to return a string that would yield an object with the same value when passed to eval(); otherwise, the representation is a string enclosed in angle brackets that contains the name of the type of the object together with additional information often including the name and address of the object. A class can control what this function returns for its instances by defining a __repr__() method. If sys.displayhook() is not accessible, this function will raise RuntimeError.
+
+# repr unambiguous (more data but more disorganized, unreadable, for developers, debugging)
+# str readable (less data and more disorganized, readable, for non developers, user friendly)
+
+print(str) #  gives us class by printing the method ---> <class 'str'>
+print(list) # <class 'list'>
+print(int) # <class 'int'>
+
+my_list = [1, 2, 3, 4, 5]
+my_iter = iter(my_list)
+print(next(my_iter)) # Output: 1 # print(next(my_list)): error
+print(next(my_iter)) # Output: 2
+print(next(my_iter)) # Output: 3
