@@ -289,3 +289,35 @@ my_iter = iter(my_list)
 print(next(my_iter)) # Output: 1 # print(next(my_list)): error
 print(next(my_iter)) # Output: 2
 print(next(my_iter)) # Output: 3
+
+for i in range(11, 1, -1):  # 10 to 1 (backwards)
+    print(i)
+
+mylist = ['banana' , 'apple', 'orange']
+
+# IN generates boolean value
+# 1
+
+if 'banana' in mylist:
+    print('1')
+else:
+    print('0')
+
+# 2
+
+print('banana' in mylist)
+print({True: '1', False: '0'}['banana' in mylist]) # in generates a bool, this mean according to the condition ['banana' in my list] it will print true:1 or false:0
+print(('0', '1')['banana' in mylist]) # same as the example above but without specifying true / false outputs, using defaults 'false' its first so 0 if false and 1 if true.
+
+def name(a, b = 2): # default value for b is 2, so if not specified when calling a function it will not raise an error.
+    return a * b 
+
+print(name(1)) # 1 * '2' (default) = 2
+print(name('a', 8)) # 'a' * 8 = 'aaaaaaaa'
+
+
+def greet(name, greeting = 'Hello'): # Specifying default value for greeting if it's not specified (same logic as above)
+        print(f"{greeting}, {name}!")
+
+greet("John") # Calling without specifying 'greeting', so default will take place
+greet("Mary", "Hi") # We overwrite the default value 'Hello', with the value of our choice; in this case 'Hi'
