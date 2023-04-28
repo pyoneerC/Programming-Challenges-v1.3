@@ -321,3 +321,68 @@ def greet(name, greeting = 'Hello'): # Specifying default value for greeting if 
 
 greet("John") # Calling without specifying 'greeting', so default will take place
 greet("Mary", "Hi") # We overwrite the default value 'Hello', with the value of our choice; in this case 'Hi'
+
+num4 = 1_000_000
+num1 = 1_0
+num2=2_4-2 # 24 - 2
+num3 = 2.3_23 # 2.323
+print(num4) # Output: 1000000
+print(num1) # 10
+print(num2) #22
+print(num3) # 2.323
+
+# Only for numbers. _ for readability, they are completely ignored in the number and in the console when executing the program
+
+# Python allows for multiple assignment, meaning you can assign multiple variables at once. For example, x, y = 1, 2 assigns 1 to x and 2 to y.
+# Saves a lot of code lines, but reduces code readability. 
+
+x, y, z = 1, 'a', (1,2,3)
+
+print(x) # 1 
+print(y) # a
+print(z) # (1,2,3)
+
+
+# “philosophers quotes not accepted in python“
+# “ “ is not " "
+
+# print(“ 123 “) ERROR: SyntaxError: invalid character '“' (U+201C)
+
+
+# Get index of str
+
+x = 'Hello'
+y = 342
+
+print(x.index('l')) # 2 ---> Prints first index that encounters 'l', not both.add()
+# print(y.index(4)) ERROR: AttributeError: 'int' object has no attribute 'index'
+
+# Get item by index
+
+x = 'Hello'[0]
+y = 123.3[0]
+
+print(x) # H
+# print(y) ERROR: TypeError: 'int' , 'float' 'bool' object is not subscriptable (cannot be accessed by index)
+
+# Examples of subscriptable objects in Python include lists, tuples, strings, sets, and dictionaries.
+
+j = list
+r = dict
+
+print(j)
+print(r)
+
+# <class 'list'>
+# <class 'dict'>
+
+# If we put type(j) we will get NoneTypeError
+# If you try to get the type of a built-in class or function like list, dict, or print, you will get the following error: TypeError: 'type' object is not subscriptable. The type() function can be used to get the type of an object, but it cannot be used to get the type of a class or function itself.
+
+# Fact: If we put a breakpoint in a comment, it will move it invisibly to the last piece of executable code. If I put a breakpoint here, debugger will stop at line 365 (print(r)) and show me the var values at that moment of the execution or so, same with multiple breakpoints.
+
+i = int(.999) # If we define a float as an int, the number will floor to the nearest value (ex. say we have .0000001 and .999999999 it will round it to 0, we can use .round() to round correctly instead of this)
+f = int(.00001)
+
+print(i)  # 0
+print(f)  # 0
