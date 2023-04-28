@@ -360,7 +360,7 @@ print(x.index('l')) # 2 ---> Prints first index that encounters 'l', not both.ad
 # Get item by index
 
 x = 'Hello'[0]
-y = 123.3[0]
+# y = 123.3[0]
 
 print(x) # H
 # print(y) ERROR: TypeError: 'int' , 'float' 'bool' object is not subscriptable (cannot be accessed by index)
@@ -383,6 +383,60 @@ print(r)
 
 i = int(.999) # If we define a float as an int, the number will floor to the nearest value (ex. say we have .0000001 and .999999999 it will round it to 0, we can use .round() to round correctly instead of this)
 f = int(.00001)
+g = 1.01
+k = 1.99
+
+print(round(f)) # 0
+print(round(i)) # 0 because i was already in 0
+print(round(g)) # 1.01 ---> 1
+print(round(k)) # 1.99 ---> 2
 
 print(i)  # 0
 print(f)  # 0
+
+print(bin(10)) # 0b1010
+# Return the binary representation of an integer.
+
+# Bin to int
+
+binary_num = '0b1010' # 0B ---> binary
+decimal_num = int(binary_num, 0) # Base in which the bin is interpreted (bin32, for example.) 0 works in this case. If no base specified, we get an error.
+# n this case, the base is 0, which means that Python will automatically determine the base of the number system based on the prefix of the string. Since the string starts with '0b', Python will interpret it as a binary string and convert it to a decimal number.
+print(decimal_num) # 10
+
+# You can use the `get()` method of the dictionary to get any default value without an error if the key does not exist.
+
+my_dict = {"apple": 1, "banana": 2, "orange": 3}
+print(my_dict.get("apple"))  # Output: 1 ---> 'apple' ---> key = 1
+print(my_dict.get("grape"))  # Output: None ---> Key doesn't exist
+
+# `assert` statement in Python is used to check whether a given expression is true or not. If the expression is true, then the program will continue executing, but if the expression is false, then it will raise an AssertionError with an optional error message.
+# Syntax: assert expression [, arguments]
+
+x = 5
+y = 10
+assert x < y, "x is not less than y" # This will print if the condition is False (AssertionError)
+print("This will execute only if x < y") # If x < 5 , True, This will print
+
+
+# replace()
+
+my_string = "Hello, World!"
+new_string = my_string.replace("World", "Python") # World to be replaced, replacement
+print(new_string)  # Output: Hello, Python!
+
+# number of occurrences
+
+my_string = "Hello, World! Hello, Python!"
+new_string = my_string.replace("Hello", "Hi", 2) # Replaces this 2 TIMES, if 1, only the first occurrence will be changed. If 0, none will be changed, if negative number, all will be changed
+print(new_string)  # Output: Hi, World! Hi, Python!
+
+# Replace with empty string
+
+my_string = "Hello, World!"
+new_string = my_string.replace(",", "")
+print(new_string)  # Output: Hello World!
+
+my_string = "Hello, World!"
+new_string = my_string.replace(",", ";")
+print(new_string)  # Output: Hello; World!

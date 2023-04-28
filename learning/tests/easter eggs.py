@@ -23,6 +23,8 @@ import this # Prints the zen of python in console: "The Zen of Python" is a coll
 # If the implementation is easy to explain, it may be a good idea.
 # Namespaces are one honking great idea -- let's do more of those!
 
+# NEVER USE KEYWORDS FOR DEFINING THINGS AS IT WILL GO OVER THEM AND RAISE ERROR. (ex. dict = and dict())
+
 # ROT13-encoded version
 
 # Gur Mra bs Clguba, ol Gvz Crgref
