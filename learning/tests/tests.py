@@ -440,3 +440,15 @@ print(new_string)  # Output: Hello World!
 my_string = "Hello, World!"
 new_string = my_string.replace(",", ";")
 print(new_string)  # Output: Hello; World!
+
+# There are several built-in objects that are iterables. Here are some of them:
+
+# - Lists
+# - Tuples
+# - Strings
+# - Sets
+# - Dictionaries
+# - Range objects
+# - File objects
+
+# There are also several objects in Python that are not iterables, such as integers, floats, and booleans.
