@@ -452,3 +452,22 @@ print(new_string)  # Output: Hello; World!
 # - File objects
 
 # There are also several objects in Python that are not iterables, such as integers, floats, and booleans.
+
+# Objects without proper representation:
+
+def foo(): ...
+print(foo)
+print(object())
+print(lambda: 1)
+print((x for x in [1,2,3]))
+
+# Output:
+
+# <function foo at 0x7fda078e8680>
+# 002 | <object object at 0x7fda078d4150>
+# 003 | <function <lambda> at 0x7fda078e84a0>
+# 004 | <generator object <genexpr> at 0x7fda079481e0>
+
+#  When running out of memory, an error 'MemoryError' is raised at the beginning of the execution
+# On a 64-bit system, the maximum addressable memory is 2^64 bytes, which is a very large number, so don't worry running out of memory.
+# In general, you don't need to worry about running out of memory as long as you're working with reasonably sized data. However, if you're working with extremely large datasets or running complex algorithms that require a lot of memory, you may run into memory issues. In these cases, you can try optimizing your code to use less memory or consider using a distributed computing framework that can handle large amounts of data across multiple machines.
