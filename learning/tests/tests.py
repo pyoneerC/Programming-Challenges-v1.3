@@ -471,3 +471,19 @@ print((x for x in [1,2,3]))
 #  When running out of memory, an error 'MemoryError' is raised at the beginning of the execution
 # On a 64-bit system, the maximum addressable memory is 2^64 bytes, which is a very large number, so don't worry running out of memory.
 # In general, you don't need to worry about running out of memory as long as you're working with reasonably sized data. However, if you're working with extremely large datasets or running complex algorithms that require a lot of memory, you may run into memory issues. In these cases, you can try optimizing your code to use less memory or consider using a distributed computing framework that can handle large amounts of data across multiple machines.
+
+a_list = [1,2,3]
+not_a_list = 'hello'
+
+print(isinstance(a_list, list)) # True
+print(isinstance(not_a_list, list)) # False
+
+# an instance is an object that has been instantiated from a class, and it has its own unique set of data and properties.
+# A list is instance of the object list in python, but a string it's not
+
+# An instance is an object created from a specific class, meaning it's a copy of the class that can hold its own values for the attributes defined in the class.
+
+# So when we say a_list = [1, 2, 3], a_list is an instance of the class list, meaning it's a copy of the class list with its own values for the attributes defined in the class (in this case, the values [1, 2, 3]). Similarly, when we say not_a_list = 'hello', not_a_list is an instance of the class str, meaning it's a copy of the class str with its own values for the attributes defined in the class (in this case, the value 'hello').
+
+
+# Note that error are RAISED AS exceptions, errors do not raise exceptions.

@@ -130,3 +130,23 @@ print(f'{today:%f %Z, %j, %W %x}')
 # 917976 , 114, 17 04/24/23
 
 # https://docs.python.org/2/library/datetime.html#strftime-and-strptime-behavior
+
+numb = -30.0532234
+
+print(f'{numb:=09.2f}')
+
+# Formats the numb variable as a string with a width of 9 (Since the number has a sign (-) and 2 digits before the decimal point, that leaves 6 characters for the fractional part of the number, which includes the decimal point.) and 2 decimal places. 
+# The = sign after the colon : means that the formatted value will be padded with leading zeroes.
+# The - sign at the beginning of the value means that the negative sign should be included.
+
+# -00030.05 ---> string with 9 characters
+
+str = 'Center me!'
+print(f'{str:-^20}')
+
+# Centered 20 characters in total but replacing ' ' for '-'
+# -----Center me!-----
+
+str1 = 'Spam \t Ham'
+print(f'{str1!r}') # !r ---> repr (string representation of the str with escape characters and appending ' ' all included, therefore the output is 'Spam \t Ham')
+# 'Spam \t Ham' 
