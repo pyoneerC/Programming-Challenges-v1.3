@@ -487,3 +487,35 @@ print(isinstance(not_a_list, list)) # False
 
 
 # Note that error are RAISED AS exceptions, errors do not raise exceptions.
+
+lists12 = ['cereal' ,'is', 'Amazing', 'always']
+lists12.sort() # if sort got no parameters or function, it will sort by ascii position (like an abecedary for numbers and symbols, then uppercase then lowercase)
+print(lists12)
+
+# 'Amazing', 'always', 'cereal', 'is']
+
+# When python sorts characters, the uppercase come before lowercase ones (ascii order)  'A' has an ASCII value of 65, while 'a' has an ASCII value of 97. 
+
+
+from string import Template # The string module in Python provides a collection of constants and functions that are useful when working with strings. (table, punctuation, ascii, etc)
+
+# string.Template: A class that provides a simple and convenient way to perform string substitution.
+
+world = "World!"
+
+print(Template("Hello, $planet").substitute(planet=world)) # String substitution with the string library. We use template to perform a substitution to the $planet placeholder, and we substitute it with the variable world = "World!", then proceed to print it.
+
+# Hello, World!
+
+my_string = "Hello, world!"
+my_bytes = my_string.encode('') # uses system default ('' or empty) encryption(binary/bytes). We can put utf-8 here or cp1252.
+print(my_bytes)
+a = my_bytes.decode()
+print(a)
+
+# bytes object is default (if we put utf-8 is the same result, as well as cp1252, but we can't put anything like 'sdsadas'):
+
+# b'Hello, world!'
+# Hello, world!
+
+# string ---> bytes ---> string
