@@ -508,7 +508,7 @@ print(Template("Hello, $planet").substitute(planet=world)) # String substitution
 # Hello, World!
 
 my_string = "Hello, world!"
-my_bytes = my_string.encode('') # uses system default ('' or empty) encryption(binary/bytes). We can put utf-8 here or cp1252.
+my_bytes = my_string.encode() # uses system default ('' or empty) encryption(binary/bytes). We can put utf-8 here or cp1252.
 print(my_bytes)
 a = my_bytes.decode()
 print(a)
@@ -519,3 +519,50 @@ print(a)
 # Hello, world!
 
 # string ---> bytes ---> string
+
+from math import cos, pi
+
+for i in range(10):
+  print(2*((i%2)-0.5)) # 2 * number % 2 - .5
+
+# The expression 2*((i%2)-0.5) calculates a value that is either 1.0 or -1.0, depending on whether i is an even or odd number.
+
+# -1.0 ---> odd
+# 1.0 ---> even
+# -1.0
+# 1.0
+# -1.0
+# 1.0
+# -1.0
+# 1.0
+# -1.0
+
+for i in range(10):
+  print(cos(i*pi)) # cos(number*3,14)
+
+# This code will print the cosine of i*pi for each integer i in the range 0 to 9.
+
+# The math.cos() function is a built-in function in Python's math module that returns the cosine of a given angle in radians. In this case, i*math.pi will give the angle in radians for each i value in the loop, which will then be passed to math.cos() to calculate its cosine value.
+
+# Since the range() function generates a sequence of integers from 0 to 9 (excluding 10), the loop will iterate 10 times, with each iteration calculating the cosine of an angle in radians and printing the result to the console using the print() function.
+
+# As you can see, the cosine of 0*pi, 2*pi, 4*pi, 6*pi, and 8*pi is 1.0, while the cosine of 1*pi, 3*pi, 5*pi, 7*pi, and 9*pi is -1.0.
+
+# 1.0
+# -1.0
+# 1.0
+# -1.0
+# 1.0
+# -1.0
+# 1.0
+# -1.0
+# 1.0
+# -1.0
+
+print(help("modules"))
+
+# List all the modules. Enter any module name to get more help.  Or, type "modules spam" to search for modules whose name or summary contain the string "spam".
+
+print(help("math"))
+
+# Help about a specific library in this case, math. Explain each class and function in the console.
