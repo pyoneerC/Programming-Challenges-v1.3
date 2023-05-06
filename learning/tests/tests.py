@@ -559,10 +559,42 @@ for i in range(10):
 # 1.0
 # -1.0
 
-print(help("modules"))
+# print(help("modules"))
 
 # List all the modules. Enter any module name to get more help.  Or, type "modules spam" to search for modules whose name or summary contain the string "spam".
 
-print(help("math"))
+# print(help("math"))
 
 # Help about a specific library in this case, math. Explain each class and function in the console.
+
+# is decimal/ is digit (checks string)
+
+# isdigit example
+s1 = "123"
+s2 = "¹²³"  # Unicode superscript digits # 1³ + 2³ + 3³ = 1 + 8 + 27 = 36 ( do not perform any operations by default)
+print(s1.isdigit())  # True (digit in any form)
+print(s2.isdigit())  # True (digit in any form)
+print(s2)
+
+# isdecimal example
+s1 = "123"
+s2 = "¹²³"  # Unicode superscript digits
+
+print(s1.isdecimal())  # True
+print(s2.isdecimal())  # False
+
+# The reason superscript 123 is not considered a decimal is that a decimal is a numeric value expressed in the base-10 numbering system, using digits 0-9. Superscripts are not recognized as digits in the base-10 numbering system, and therefore cannot be used to represent decimal values.
+
+# On the other hand, the string "123" is considered a decimal because it consists entirely of numeric characters that represent a decimal value in the base-10 numbering system. The isdecimal() and isdigit() methods in Python can be used to check if a string consists entirely of decimal characters.
+
+s3 = '-1'
+
+print(s3.isdecimal()) # False
+print(s3.isnumeric()) # False
+print(s3.isdigit()) # False
+
+# The `isdigit()` method returns `False` for `-1` because it is not a digit. A digit is a character that represents a number (0-9). 
+
+# The `isdecimal()` method returns `False` for `-1` as well. A decimal is a numeric character that represents a decimal point or fraction (0-9 and other characters depending on the system). 
+# 
+# `-1` does not contain any decimal point or fraction, so it is not considered a decimal, not a number.
